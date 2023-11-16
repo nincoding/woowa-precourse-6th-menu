@@ -28,7 +28,7 @@ class MenuMaker {
     const menusIndex = menus.map((_, index) => index);
     const recommendMenuIndex = Random.shuffle(menusIndex)[0];
 
-    return menus[recommendMenuIndex];
+    return menus[recommendMenuIndex - 1];
   }
 
   #isValidCotainMenu() {

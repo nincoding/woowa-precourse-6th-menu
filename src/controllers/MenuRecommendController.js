@@ -18,7 +18,9 @@ class MenuRecommendController {
   async startService() {
     await this.#initService();
 
-    console.log(this.#coachsHateMenus);
+    const recommendData = this.#getRecommendServiceData();
+
+    this.#printRecommendService(recommendData);
   }
 
   async #initService() {
@@ -44,6 +46,14 @@ class MenuRecommendController {
 
       this.#coachsHateMenus[name] = hateMenus;
     }
+  }
+
+  #getRecommendServiceData() {
+    return;
+  }
+
+  #printRecommendService(recommendData) {
+    OutputView.printResultMessage();
   }
 }
 

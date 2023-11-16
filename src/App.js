@@ -5,11 +5,11 @@ class App {
   #controller;
 
   constructor() {
-    this.#controller = new MenuRecommendController(new MenuRecommend());
+    this.#controller = new MenuRecommendController(MenuRecommend);
   }
 
   async play() {
-    this.#controller.startService();
+    await this.#controller.startService();
   }
 }
 

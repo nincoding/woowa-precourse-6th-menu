@@ -9,6 +9,10 @@ const OutputView = {
   printStartMessage() {
     Console.print(OUTPUT_MESSAGE.start);
   },
+
+  printResultMessage() {
+    Console.print(OUTPUT_MESSAGE.resultMessage);
+  },
 };
 
 export default OutputView;

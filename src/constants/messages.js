@@ -1,10 +1,12 @@
 const OUTPUT_MESSAGE = {
   start: '점심 메뉴 추천을 시작합니다.',
+  resultMessage: '\n메뉴 추천 결과입니다.',
+  endMessage: '추천을 완료했습니다.',
 };
 
 const INPUT_MESSAGE = {
-  requireNames: '코치의 이름을 입력해 주세요. (, 로 구분)\n',
-  requireHateMenus: (name) => `${name}(이)가 못 먹는 메뉴를 입력해 주세요.\n`,
+  requireNames: '\n코치의 이름을 입력해 주세요. (, 로 구분)\n',
+  requireHateMenus: (name) => `\n${name}(이)가 못 먹는 메뉴를 입력해 주세요.\n`,
 };
 
 const ERROR_MESSAGE = {

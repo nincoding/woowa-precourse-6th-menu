@@ -1,12 +1,11 @@
-import App from '../src/App.js';
 import { MissionUtils } from '@woowacourse/mission-utils';
+import App from '../src/App.js';
 
 const mockQuestions = (inputs) => {
   MissionUtils.Console.readLineAsync = jest.fn();
 
   MissionUtils.Console.readLineAsync.mockImplementation(() => {
     const input = inputs.shift();
-
     return Promise.resolve(input);
   });
 };
@@ -35,7 +34,7 @@ const getLogSpy = () => {
 };
 
 const getOutput = (logSpy) => {
-  return [...logSpy.mock.calls].join('');
+  return logSpy.mock.calls.map(([message]) => message).join('\n');
 };
 
 const expectLogContains = (received, logs) => {
@@ -50,7 +49,7 @@ describe('점심 메뉴 테스트', () => {
   });
 
   describe('전체 기능 테스트', () => {
-    test('카테고리 메뉴 중복 없는 추천', () => {
+    test('카테고리 메뉴 중복 없는 추천', async () => {
       const logSpy = getLogSpy();
 
       mockRandoms([2, 5, 1, 3, 4]);
@@ -74,7 +73,7 @@ describe('점심 메뉴 테스트', () => {
       ]);
 
       const app = new App();
-      app.play();
+      await app.play();
       const log = getOutput(logSpy);
 
       expect(log.replace(/\n/g, '')).toEqual(

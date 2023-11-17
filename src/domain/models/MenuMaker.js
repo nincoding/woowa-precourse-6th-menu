@@ -25,7 +25,7 @@ class MenuMaker {
 
   #recommendMenu(category) {
     const menus = parseString(MENU[category]);
-    const menusIndex = menus.map((_, index) => index);
+    const menusIndex = menus.map((_, index) => index + 1);
     const recommendMenuIndex = Random.shuffle(menusIndex)[0];
 
     return menus[recommendMenuIndex - 1];
